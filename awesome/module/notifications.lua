@@ -1,25 +1,31 @@
 local naughty = require('naughty')
-local beautiful = require('beautiful')
-local gears = require('gears')
-local dpi = require('beautiful').xresources.apply_dpi
+-- local beautiful = require('beautiful')
+-- local gears = require('gears')
+-- local dpi = require('beautiful').xresources.apply_dpi
+local awful = require('awful')
+-- --Naughty presets
+-- naughty.config.padding = 8
+-- naughty.config.spacing = 8
 
--- Naughty presets
-naughty.config.padding = 8
-naughty.config.spacing = 8
+-- naughty.config.defaults.timeout = 5
+-- naughty.config.defaults.screen = 1
+-- naughty.config.defaults.position = 'bottom_left'
+-- naughty.config.defaults.margin = dpi(16)
+-- naughty.config.defaults.ontop = true
+-- naughty.config.defaults.font = 'Roboto Regular 10'
+-- naughty.config.defaults.icon = nil
+-- naughty.config.defaults.icon_size = dpi(32)
+-- naughty.config.defaults.shape = gears.shape.rounded_rect
+-- naughty.config.defaults.border_width = 0
+-- naughty.config.defaults.hover_timeout = nil
+naughty.notify = function(args)
+  -- Call your custom callback function
+  log_this1(args)
 
-naughty.config.defaults.timeout = 5
-naughty.config.defaults.screen = 1
-naughty.config.defaults.position = 'bottom_left'
-naughty.config.defaults.margin = dpi(16)
-naughty.config.defaults.ontop = true
-naughty.config.defaults.font = 'Roboto Regular 10'
-naughty.config.defaults.icon = nil
-naughty.config.defaults.icon_size = dpi(32)
-naughty.config.defaults.shape = gears.shape.rounded_rect
-naughty.config.defaults.border_width = 0
-naughty.config.defaults.hover_timeout = nil
+end
 
 -- Error handling
+
 if _G.awesome.startup_errors then
   naughty.notify(
     {
@@ -28,6 +34,7 @@ if _G.awesome.startup_errors then
       text = _G.awesome.startup_errors
     }
   )
+
 end
 
 do
@@ -39,7 +46,6 @@ do
         return
       end
       in_error = true
-
       naughty.notify(
         {
           preset = naughty.config.presets.critical,
@@ -52,11 +58,17 @@ do
   )
 end
 
-function log_this(title, txt)
-  naughty.notify(
-    {
-      title = 'log: ' .. title,
-      text = txt
-    }
-  )
+
+function log_this1(args)
+  -- naughty.notify(
+  --   {
+  --     title = 'log: ' .. title,
+  --     text = txt
+  --   }
+  -- )
+  local txt=args.text
+  local command2 = 'echo "' .. txt .. '" | rofi -dmenu -i -p "notification" -config ~/.config/rofi/notification.rasi'
+    awful.spawn.with_shell('pkill rofi')
+    awful.spawn.with_shell(command2)
+
 end
