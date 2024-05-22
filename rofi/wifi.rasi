@@ -2,13 +2,13 @@
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
-    display-drun:                "";
+    display-drun:                " ";
     display-run:                 " ";
     display-filebrowser:         " ";
     display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font Bold 13";
+    font:                        "JetBrainsMono Nerd Font 10";
     icon-theme:                  "Tela-circle-dracula";
 }
 
@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      10em;
-    width:                       18em;
+    height:                      30em;
+    width:                       25em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -27,12 +27,37 @@ window {
     padding:                     0em;
     border-color:                @main-br;
     background-color:            @main-bg;
-    children:                    [ "listbox" ];
-    border-radius :30;
+    border-radius: 3em;
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "inputbar" , "listbox" ];
+    background-color:            transparent;
+    background-image:            url("./nord_lake.png", height);
+    border-radius: 3em;
+}
 
 
-
-
+// Inputs //
+inputbar {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     4em;
+    children:                    [ "entry" ];
+    background-color:            transparent;
+    background-image:            url("~/.cache/hyde/wall.thmb", width);
+    border-radius:               1em 1em 0em 0em;
+}
+entry {
+    border-radius:               2em;
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     1em;
+    text-color:                  @main-fg;
+    background-color:            @main-bg;
 }
 
 

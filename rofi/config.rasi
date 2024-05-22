@@ -2,7 +2,7 @@
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
-    display-drun:                " ";
+    display-drun:                "";
     display-run:                 " ";
     display-filebrowser:         " ";
     display-window:              " ";
@@ -51,7 +51,7 @@ inputbar {
     background-color:            transparent;
     background-image:            url("~/.cache/hyde/wall.thmb", width);
 }
-
+// Add this block for displaying time
 entry {
     border-radius:               2em;
     enabled:                     true;

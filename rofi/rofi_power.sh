@@ -1,24 +1,22 @@
-#! /bin/sh
+#!/bin/bash
 
-
-# Define options for the power menu
-options="Power Off\nRestart\nLock\nLogout"
-
+options="󰐥 Power Off\n󰜉 Restart\n Lock\n Logout"  # Icons can be Unicode characters or other symbols
+ 
 # Get the user's choice using Rofi
-choice=$(echo -e "$options" | rofi -dmenu -i -p "Power Menu")
+choice=$(echo -e "$options" | rofi -dmenu -i -p "Power Menu" -config ~/.config/rofi/powe.rasi -a 20)
 
 # Perform actions based on the user's choice
 case "$choice" in
-    "Power Off")
+    "󰐥 Power Off")
         systemctl poweroff
         ;;
-    "Restart")
+    "󰜉 Restart")
         systemctl reboot
         ;;
-    "Lock")
+    " Lock")
        i3lock -c 000000
         ;;
-    "Logout")
+    " Logout")
         awesome-client "awesome.quit()"
         ;;
     *)

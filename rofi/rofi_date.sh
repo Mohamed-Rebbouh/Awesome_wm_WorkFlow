@@ -11,25 +11,21 @@
 #     echo "$highlighted_datetime"
 # }
 
-# # Function to get battery status
-# get_battery_status() {
-#     # Get battery status using acpi command
-#     battery_status=$(acpi -b)
-#     IFS=',' read -ra parts <<< "$battery_status"
+get_battery_status() {
+    # Get battery status using acpi command
+    battery_status=$(acpi -b | awk '{print $4, $3}')
 
-#     echo "$parts[1] \n $parts[0] "
-# }
+    echo "$battery_status"
+}
 
-# # Get current date and time
-# current_datetime=$(get_highlighted_date_time)
+ battery_status=$(get_battery_status)
 
-# # Get battery status
-#battery_status=$(get_battery_status)
 
 currentTime=$(date +%r)
 
 # Get current date
 currentDate=$(date +%A" "%d-%m-%Y)
 
-# Use rofi to display the current date and time and battery status
-echo "$currentTime\n$currentDate\n " | rofi -dmenu -markup-rows -p "Date & Time and Battery Status: " -config ~/.config/rofi/time.rasi
+# Use rofi to display the current date and time and battery status 
+
+echo "  :$currentTime\n  :$currentDate\n 󰁹 : $battery_status" | rofi -dmenu -markup-rows -p "Date & Time and Battery Status: " -config ~/.config/rofi/time.rasi

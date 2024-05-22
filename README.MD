@@ -64,12 +64,12 @@ chmod +x rofi_date.sh rofi_wifi.sh rofi_power.sh
         </tr>
         <tr>
             <td><img src="./assesst/layout3.png"/></td>
-            <td><img src="./assesst/rofi_date_time_battery.png"/></td>
-            <td><img src="./assesst/rofi_menu.png"/></td>
+            <td><img src="./assesst/rofi_time.png"/></td>
+            <td><img src="./assesst/rofi.png"/></td>
         </tr>
         <tr>
             <td><img src="./assesst/rofi_run.png"/></td>
-            <td><img src="./assesst/rofi_power_menu.png"/></td>
+            <td><img src="./assesst/rofi_power.png"/></td>
             <td><img src="./assesst/rofi_wifi.png"/></td>
         </tr>
     </table>

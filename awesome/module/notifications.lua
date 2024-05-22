@@ -60,15 +60,8 @@ end
 
 
 function log_this1(args)
-  -- naughty.notify(
-  --   {
-  --     title = 'log: ' .. title,
-  --     text = txt
-  --   }
-  -- )
-  local txt=args.text
-  local command2 = 'echo "' .. txt .. '" | rofi -dmenu -i -p "notification" -config ~/.config/rofi/notification.rasi'
-    awful.spawn.with_shell('pkill rofi')
-    awful.spawn.with_shell(command2)
-
+  local txt = args.text
+  local command2 = 'echo -e "'.. txt .. '" | rofi -dmenu -i -p "notification" -config ~/.config/rofi/notification.rasi'
+  awful.spawn.with_shell('pkill rofi')
+  awful.spawn.with_shell(command2)
 end

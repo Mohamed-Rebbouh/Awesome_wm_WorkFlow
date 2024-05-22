@@ -30,6 +30,7 @@ mainbox {
     orientation:                 vertical;
     children:                    [ "dummy" , "frame" ];
     background-color:            transparent;
+    padding :3 em;
 }
 dummy {
     padding:                     6em;

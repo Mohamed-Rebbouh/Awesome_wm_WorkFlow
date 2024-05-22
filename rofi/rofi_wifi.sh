@@ -11,8 +11,16 @@ elif [[ "$connected" =~ "disabled" ]]; then
 	toggle="󰖩  Enable Wi-Fi"
 fi
 
+connected_wifi=$(iwgetid -r)
+
+# Get the list of available WiFi networks
+wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
+
+# Filter out the connected WiFi network
+filtered_wifi_list=$(echo "$wifi_list" | grep -v "$connected_wifi")
+
 # Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " )
+chosen_network=$(echo -e "$toggle\n󱚽 $connected_wifi\n$filtered_wifi_list" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " -config ./wifi.rasi )
 # Get name of connection
 read -r chosen_id <<< "${chosen_network:3}"
 
@@ -36,3 +44,5 @@ else
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
     fi
 fi
+
+

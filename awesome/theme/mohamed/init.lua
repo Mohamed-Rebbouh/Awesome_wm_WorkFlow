@@ -19,6 +19,7 @@ theme.accent = mat_colors.pink
 theme.background = mat_colors.blue_grey
 
 theme.background.hue_800 = '#192933'
+--theme.background.hue_800 = '#343250'
 theme.background.hue_900 = '#121e25'
 
 

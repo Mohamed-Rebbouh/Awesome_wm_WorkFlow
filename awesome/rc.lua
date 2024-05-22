@@ -69,3 +69,5 @@ _G.client.connect_signal(
     c.border_color = beautiful.border_normal
   end
 )
+
+
