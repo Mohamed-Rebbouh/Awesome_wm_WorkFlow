@@ -22,10 +22,13 @@ get_battery_status() {
 
 
 currentTime=$(date +%r)
+light=$(light)
+volum=$(pactl list sinks | grep -A 10 '^[[:space:]]Volume:' | grep -oE '[0-9]{1,3}%' | head -n 1)
+
 
 # Get current date
 currentDate=$(date +%A" "%d-%m-%Y)
 
 # Use rofi to display the current date and time and battery status 
 
-echo "  :$currentTime\n  :$currentDate\n 󰁹 : $battery_status" | rofi -dmenu -markup-rows -p "Date & Time and Battery Status: " -config ~/.config/rofi/time.rasi
+echo "  :$currentTime\n  :$currentDate\n 󰁹 : $battery_status\n 󰃞 :$light\n  :$volum" | rofi -dmenu -markup-rows -p "Date & Time and Battery Status: " -config ~/.config/rofi/time.rasi

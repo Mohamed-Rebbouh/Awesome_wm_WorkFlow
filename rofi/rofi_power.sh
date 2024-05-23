@@ -11,7 +11,7 @@ case "$choice" in
         systemctl poweroff
         ;;
     "󰜉 Restart")
-        systemctl reboot
+        systemctl restartl
         ;;
     " Lock")
        i3lock -c 000000

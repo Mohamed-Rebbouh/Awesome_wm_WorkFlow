@@ -18,11 +18,11 @@ local awful = require('awful')
 -- naughty.config.defaults.shape = gears.shape.rounded_rect
 -- naughty.config.defaults.border_width = 0
 -- naughty.config.defaults.hover_timeout = nil
-naughty.notify = function(args)
-  -- Call your custom callback function
-  log_this1(args)
+-- naughty.notify = function(args)
+--   -- Call your custom callback function
+--   log_this1(args)
 
-end
+-- end
 
 -- Error handling
 

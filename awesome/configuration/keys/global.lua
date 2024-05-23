@@ -310,24 +310,17 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S tee /sys/class/backlight/intel_backlight/brightness <<< "900"')
+      awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S light -A 10')
+      awful.util.spawn_with_shell('cd ~/.config/rofi && ./light.sh')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
   awful.key(
-    {'Control'},
-    'Down',
-    function()
-      awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S tee /sys/class/backlight/intel_backlight/brightness <<< "500"'
-    )
-    end,
-    {description = '-50%', group = 'hotkeys'}
-  ),
-  awful.key(
-    {modKey},
+    {},
     'XF86MonBrightnessDown',
     function()
-      awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S tee /sys/class/backlight/intel_backlight/brightness <<< "50"')
+      awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S light -U 10')
+      awful.util.spawn_with_shell('cd ~/.config/rofi && ./light.sh')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),
@@ -338,6 +331,7 @@ local globalKeys =
     'XF86AudioRaiseVolume',
     function()
       awful.spawn('amixer -c 0 set Master playback 5%+')
+      awful.util.spawn_with_shell("cd ~/.config/rofi && ./volum.sh")
     end,
     {description = 'volume up', group = 'hotkeys'}
   ),
@@ -346,6 +340,7 @@ local globalKeys =
     'XF86AudioLowerVolume',
     function()
       awful.spawn('amixer -c 0 set Master playback 5%-')
+      awful.util.spawn_with_shell("cd ~/.config/rofi && ./volum.sh")
     end,
     {description = 'volume down', group = 'hotkeys'}
   ),

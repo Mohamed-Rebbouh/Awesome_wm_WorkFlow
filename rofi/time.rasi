@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      10em;
-    width:                       18em;
+    height:                      15em;
+    width:                       13em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -96,8 +96,9 @@ element-icon {
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:           -500;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
+    padding : -100;
 }

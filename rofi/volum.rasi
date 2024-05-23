@@ -8,7 +8,7 @@ configuration {
     display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font Bold 13";
+    font:                        "JetBrainsMono Nerd Font Bold 16";
     icon-theme:                  "Tela-circle-dracula";
 }
 
@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      12em;
-    width:                       8em;
+    height:                      4em;
+    width:                       7em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -29,9 +29,6 @@ window {
     background-color:            @main-bg;
     children:                    [ "listbox" ];
     border-radius :30;
-
-
-
 
 }
 
@@ -87,7 +84,6 @@ element {
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
-    cursor-radius :2em;
 }
 element-icon {
     size:                        2em;
@@ -97,7 +93,7 @@ element-icon {
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            -500;
+    horizontal-align:            -10em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
