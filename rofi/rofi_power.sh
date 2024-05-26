@@ -11,10 +11,10 @@ case "$choice" in
         systemctl poweroff
         ;;
     "󰜉 Restart")
-        systemctl restartl
+        systemctl restart
         ;;
     " Lock")
-       i3lock -c 000000
+       i3lock -i ~/.config/rofi/lock.png
         ;;
     " Logout")
         awesome-client "awesome.quit()"

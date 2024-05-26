@@ -88,8 +88,9 @@ element-icon {
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
+    padding : 0 -100 0 0 ;
 }

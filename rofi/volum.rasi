@@ -8,7 +8,7 @@ configuration {
     display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font Bold 16";
+    font:                        "JetBrainsMono Nerd Font Bold 15";
     icon-theme:                  "Tela-circle-dracula";
 }
 
@@ -17,8 +17,8 @@ configuration {
 
 // Main //
 window {
-    height:                      4em;
-    width:                       7em;
+    height:                      3.8em;
+    width:                       6em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -92,10 +92,10 @@ element-icon {
     text-color:                  inherit;
 }
 element-text {
-    vertical-align:              0.5;
+    vertical-align:              0.47;
     horizontal-align:            -10em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
-    padding :-100;
+    padding :-115;
 }
