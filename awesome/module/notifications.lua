@@ -18,11 +18,11 @@ local awful = require('awful')
 -- naughty.config.defaults.shape = gears.shape.rounded_rect
 -- naughty.config.defaults.border_width = 0
 -- naughty.config.defaults.hover_timeout = nil
--- naughty.notify = function(args)
---   -- Call your custom callback function
---   log_this1(args)
+naughty.notify = function(args)
+  -- Call your custom callback function
+  log_this1(args)
 
--- end
+end
 
 -- Error handling
 
@@ -60,8 +60,10 @@ end
 
 
 function log_this1(args)
-  local txt = args.text
-  local command2 = 'echo -e "'.. txt .. '" | rofi -dmenu -i -p "notification" -config ~/.config/rofi/notification.rasi'
-  awful.spawn.with_shell('pkill rofi')
-  awful.spawn.with_shell(command2)
+  local txt = args.text or ""
+  local titl = args.title or "title"
+  local command2 = 'echo -e "'.. titl .. ':'.. txt..'" | rofi -dmenu -i -p "notification" -config ~/.config/rofi/notification.rasi'
+  
+  -- Ensure previous rofi instances are terminated
+  awful.spawn.with_shell('pkill rofi; sleep 0.1; ' .. command2)
 end

@@ -125,7 +125,7 @@ local globalKeys =
     {modkey},
     'l',
     function()
-      awful.spawn(apps.default.lock)
+      awful.util.spawn_with_shell("cd ~/.config/awesome/configuration&& ./lock.sh")
     end,
     {description = 'Lock the screen', group = 'awesome'}
   ),
@@ -311,7 +311,6 @@ local globalKeys =
     'XF86MonBrightnessUp',
     function()
       awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S light -A 10')
-      awful.util.spawn_with_shell('cd ~/.config/rofi && ./light.sh')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
@@ -320,7 +319,6 @@ local globalKeys =
     'XF86MonBrightnessDown',
     function()
       awful.util.spawn_with_shell('echo "mohamed2003" | sudo -S light -U 10')
-      awful.util.spawn_with_shell('cd ~/.config/rofi && ./light.sh')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),
@@ -331,7 +329,6 @@ local globalKeys =
     'XF86AudioRaiseVolume',
     function()
       awful.spawn('amixer -c 0 set Master playback 5%+')
-      awful.util.spawn_with_shell("cd ~/.config/rofi && ./volum.sh")
     end,
     {description = 'volume up', group = 'hotkeys'}
   ),
@@ -340,7 +337,7 @@ local globalKeys =
     'XF86AudioLowerVolume',
     function()
       awful.spawn('amixer -c 0 set Master playback 5%-')
-      awful.util.spawn_with_shell("cd ~/.config/rofi && ./volum.sh")
+      
     end,
     {description = 'volume down', group = 'hotkeys'}
   ),
@@ -348,7 +345,7 @@ local globalKeys =
     {},
     'XF86AudioMute',
     function()
-      awful.spawn('amixer -c 0 set Master playback 100%-')
+      awful.spawn('amixer -c 0 set Master toggle')
     end,
     {description = 'toggle mute', group = 'hotkeys'}
   ),
@@ -384,21 +381,21 @@ local globalKeys =
     {description = 'move window to next screen', group = 'client'}
   ),
   -- Open default program for tag
-  awful.key(
-    {modkey},
-    't',
-    function()
-      awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = _G.mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-    end,
-    {description = 'Open default program for tag/workspace', group = 'tag'}
-  ),
-  -- Custom hotkeys
+  -- awful.key(
+  --   {modkey},
+  --   'l',
+  --   function()
+  --     awful.spawn(
+  --         awful.screen.focused().selected_tag.defaultApp,
+  --         {
+  --           tag = _G.mouse.screen.selected_tag,
+  --           placement = awful.placement.bottom_right
+  --         }
+  --       )
+  --   end,
+  --   {description = 'Open default program for tag/workspace', group = 'tag'}
+  -- ),
+  -- -- Custom hotkeys
   -- vfio integration
   awful.key(
     {'Control',altkey},
@@ -436,14 +433,14 @@ local globalKeys =
     {modkey},
     'e',
     function()
-      awful.util.spawn_with_shell('dolphin -stylesheet ~/.config/dolphin_s.qss')
+      awful.util.spawn_with_shell('dolphin -stylesheet ~/.config/dolphin_s.qss ')
     end,
     {description = 'filebrowser', group = 'launcher'}
   ),
   -- Emoji Picker
  
   awful.key(
-    {'Shift'},
+    {modkey},
     't',
     function()
       awful.util.spawn_with_shell('cd ~/.config/rofi && ./rofi_date.sh')

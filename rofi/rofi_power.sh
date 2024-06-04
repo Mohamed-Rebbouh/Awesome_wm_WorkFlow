@@ -14,7 +14,7 @@ case "$choice" in
         systemctl restart
         ;;
     " Lock")
-       i3lock -i ~/.config/rofi/lock.png
+       cd ~/.config/awesome/configuration && ./lock.sh
         ;;
     " Logout")
         awesome-client "awesome.quit()"

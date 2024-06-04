@@ -33,9 +33,8 @@ return {
     'xfce4-power-manager', -- Power manager
      'flameshot',
      'synology-drive -minimized',
-     'steam -silent',
     'feh --randomize --bg-fill ~/.config/moh.png',
-    '/usr/bin/variety',
+    --'/usr/bin/variety',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
