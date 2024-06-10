@@ -36,7 +36,7 @@ yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-the
 ```
 #### 2)get the dotfiles :
 ```
-
+ git clone https://github.com/Mohamed-Rebbouh/Awesome_wm_WorkFlow.git 
 ```
 #### 3) copy the config :
 navigate to the this folder 
@@ -48,9 +48,13 @@ cp -r ./rofi  ~/.config/
 ```
 Note:make sure that the scripts in rofi folder excutabel if not run:
 ```
-chmod +x rofi_date.sh rofi_wifi.sh rofi_power.sh
+chmod +x rofi_date.sh rofi_wifi.sh rofi_power.sh 
 
 ```
+ and in awsome/configuration run:
+ ```
+  chmod +x lock.sh
+ ``` 
 
 
 
@@ -58,12 +62,12 @@ chmod +x rofi_date.sh rofi_wifi.sh rofi_power.sh
 <div align="center">
     <table>
         <tr>
-            <td><img src="./assesst/back.png"/></td>
             <td><img src="./assesst/layout1.png"/></td>
             <td><img src="./assesst/layout2.png"/></td>
+            <td><img src="./assesst/layout3.png"/></td>
         </tr>
         <tr>
-            <td><img src="./assesst/layout3.png"/></td>
+            <td><img src="./assesst/notif_rofi.png"/></td>
             <td><img src="./assesst/rofi_time.png"/></td>
             <td><img src="./assesst/rofi.png"/></td>
         </tr>
@@ -118,6 +122,6 @@ chmod +x rofi_date.sh rofi_wifi.sh rofi_power.sh
 | <kbd>Mod</kbd> + <kbd>Shift</kbd> + <kbd>space</kbd> | Select previous layout                                     |
 | <kbd>Mod</kbd> + <kbd>Ctrl</kbd> + <kbd>n</kbd> | Restore minimized client                                   |
 | <kbd>Mod</kbd> + <kbd>z</kbd>        | Toggle dropdown application                                     |
-| <kbd>Shift</kbd> + <kbd>t</kbd>      | Run rofi time script                                            |
+| <kbd>Mod</kbd> + <kbd>t</kbd>      | Run rofi time script                                            |
 
 
